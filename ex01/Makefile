@@ -1,9 +1,9 @@
-NAME = megaphone
+NAME = PhoneBook
 
 CC = clang++
 FLAGS = -Werror -Wextra -Wall
 
-SRC = megaphone.cpp
+SRC = PhoneBook.cpp
 
 all : $(NAME)
 
