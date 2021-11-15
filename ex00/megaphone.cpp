@@ -8,6 +8,6 @@ int main(int argc, char **argv)
     for (int i = 1; i < argc; i++)
         for (int j = 0; j < strlen(argv[i]) ; j++)
             std::cout << (char)(std::toupper(argv[i][j]));
-    std::cout << "\n";
+    std::cout << std::endl;
     return (0);
 }
