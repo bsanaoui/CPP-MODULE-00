@@ -15,7 +15,6 @@ class contact {
 
     public :
         contact();
-       // contact(int, std::string, std::string, std::string, std::string, std::string);
         int get_index();
         std::string get_first_name();
         std::string get_last_name();
