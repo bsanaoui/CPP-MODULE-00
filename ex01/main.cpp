@@ -2,24 +2,30 @@
 
 bool isNumber(const std::string str)
 {
+    if (str == "")
+        return (false); 
     for(int i = 0 ; i < str.length() ; i++)
-        if (std::isdigit(str[i]) == 0) return false;
-    return true;
+        if (std::isdigit(str[i]) == 0) return (false);
+    return (true);
+}
+
+void    displayHeader()
+{
+    std::cout << std::setw(50) << " ---------- Welcome To Your PhoneBook ---------" << "\n\n"   <<std::endl;
+    std::cout << " /**************/ Type 'ADD' to add a contact /**************/\n" << std::endl;
+    std::cout << " /***********/ Type 'EXIT' to quit the program /*************/\n" << std::endl;
+    std::cout << " /***/ Type 'SEARCH' to display information of a contact /***/" << "\n\n" << std::endl;
 }
 
 int main()
 {
     PhoneBook *phone_book = new PhoneBook();
     std::string input;
-
-    std::cout << std::setw(50) << " ---------- Welcome To Your PhoneBook ---------" << "\n\n" <<std::endl;
-    std::cout << " /**************/ Type 'ADD' to add a contact /**************/\n" << std::endl;
-    std::cout << " /***********/ Type 'EXIT' to quit the program /*************/\n" << std::endl;
-    std::cout << " /***/ Type 'SEARCH' to display information of a contact /***/" << "\n\n" << std::endl;
+    displayHeader();
     while (1)
     {
         std::cout << "PhoneBook > ";
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (!input.compare("EXIT"))
         {
             delete phone_book;
@@ -31,10 +37,10 @@ int main()
         {
             phone_book->show_contacts();
             std::cout << "Enter The Index Of Contact You Want" << std::endl;
-            do 
-            {
+            do
+            {   
                 std::cout << "Index = ";
-                std::cin >> input;
+                std::getline(std::cin, input);
                 if (!isNumber(input))
                     std::cout << "Please Enter A Valid Number !!" << std::endl;
             } while (!isNumber(input));

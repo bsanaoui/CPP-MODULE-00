@@ -67,11 +67,11 @@ void    PhoneBook::show_contact(int index) const
 void    PhoneBook::set_info_contact()
 {
     std::string first_name, last_name, nickname, phone_number, darkest_secret;
-    std::cout << "\nfirst name = "; std::cin >> first_name;
-    std::cout << "last name = "; std::cin >> last_name;
-    std::cout << "nickname : "; std::cin >> nickname;
-    std::cout << "phone_number : "; std::cin >> phone_number;
-    std::cout << "darkest_secret : "; std::cin >> darkest_secret;
+    std::cout << "\nfirst name = "; std::getline(std::cin, first_name);
+    std::cout << "last name = "; std::getline(std::cin, last_name);
+    std::cout << "nickname = "; std::getline(std::cin, nickname);
+    std::cout << "phone_number = "; std::getline(std::cin, phone_number);
+    std::cout << "darkest_secret = "; std::getline(std::cin, darkest_secret);
     add_contact(first_name, last_name, nickname, phone_number, darkest_secret);
     std::cout << "\nContact Add Successfully !\n" << std::endl;
 }
