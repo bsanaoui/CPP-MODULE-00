@@ -29,5 +29,4 @@ class contact {
         void    set_darkest_secret(std::string);
 
 };
-
 #endif
